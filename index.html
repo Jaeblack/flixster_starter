@@ -10,15 +10,21 @@
 </head>
 
 <body>
-    <header class="logo"> FLIXTER</header>
-    <div class="search">
-        <form id="frm-movie">
+    <div>
+        <p class="logo"> FLIXTER</p>
+    </div>
+    <div>
+        <form id="frm-movie" class="search">
             <input id="search-input" type="text" placeholder="Movie name">
             <button id="btn-search-submit" type="submit">Search</button>
+            <button id="close-search-btn" class="hidden" type="reset"> Close</button>
         </form>
-        <div id="close-search-btn"></div>
+
     </div>
+
+
     <div id="movies-grid" class="movies-grid">
+        <!--
         <div class="movie-card">
             <div class="movie-title"></div>
             <img src="" alt="" class="movie-poster">
@@ -27,13 +33,14 @@
                 <p class="count"></p>
             </div>
         </div>
+        -->
 
     </div>
     <div class="more">
 
-        <button id="load-more-movies-btn">load more</button>
+        <button id="load-more-movies-btn"> load more</button>
     </div>
-
+    <!--
     <div id="modal" class="modal">
         <div class="modal-left">
             <div class="modal-title">
@@ -51,7 +58,7 @@
         </div>
 
     </div>
-
+    -->
 
 
     <script src="./script.js"></script>

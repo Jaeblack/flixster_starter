@@ -17,13 +17,18 @@ const apiImgURL = 'https://image.tmdb.org/t/p/w500';
 const apiSearch = apiURL+`search/movie?`;
 const apiTrending = apiURL+`movie/now_playing?`;
 
+let lastData = ``;
+
 
 function addMovieElement( movie){
     let movieImg = apiImgURL+movie.poster_path;
     moviesGrid.innerHTML += `
     <div class="movie-card">
-        <div class="movie-title">${movie.title}</div>
+
         <img src="${movieImg}" alt="${movie.title}" class="movie-poster">
+        <div class="movie-title">
+            <p> ${movie.title} </p>
+        </div>
         <div class="movie-votes">
             <p class="average">${movie.vote_average}</p>
             <p class="count">${movie.vote_count}</p>
@@ -32,11 +37,6 @@ function addMovieElement( movie){
     </div>
     `;
 
-}
-function displayResults(data){
-    data.data.forEach((oneGif, index) => {
-        addGifElement( data.data[index].images.original.url);
-    });
 }
 function displayResults(results){
     results.forEach((movie, index) => {
@@ -57,7 +57,7 @@ async function searchMovie(){
     response = await fetch(`${apiSearch+apiParams}`);
     const resultMovie = await response.json();
     displayResults(resultMovie.results);
-    searchInput.value = ``;
+
 }
 
 async function fetchMovies(){
@@ -67,6 +67,29 @@ async function fetchMovies(){
     const results  = await response.json();
     displayResults(results.results);
 }
+
+function enableLoadMore(){
+
+}
+
+function btnsAfterSearch(){
+    if(!btnMore.classList.contains("hidden")){
+        btnMore.classList.add("hidden")
+    }
+    if(closeSearchBtn.classList.contains("hidden")){
+        closeSearchBtn.classList.remove("hidden")
+    }
+}
+
+function btnsAfterCloseSearch(){
+    if(btnMore.classList.contains("hidden")){
+        btnMore.classList.remove("hidden")
+    }
+    if(!closeSearchBtn.classList.contains("hidden")){
+        closeSearchBtn.classList.add("hidden")
+    }
+}
+
 
 function addEventListeners(
     moviesElement,
@@ -83,17 +106,21 @@ function addEventListeners(
             moviesElement.innerHTML = ``;
         }
         searchMovie();
-        if(btnMoreElement.classList.contains("hidden")){
-            btnMoreElement.classList.remove("hidden")
-        }
-        if(closeElement.classList.contains("hidden")){
-            closeElement.classList.remove("hidden")
-        }
+        btnsAfterSearch();
+    });
+    formElement.addEventListener('reset', (event) => {
+        event.preventDefault();
+        searchInput.value = ``;
+        btnsAfterCloseSearch();
+        page = 0;
+
+        moviesElement.innerHTML = ``;
+
+        fetchMovies();
     });
     btnMoreElement.addEventListener('click', (event) => {
         event.preventDefault();
         fetchMovies();
-        console.log('Yeaaah boiii');
     });
   }
 

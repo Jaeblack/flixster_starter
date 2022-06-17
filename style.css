@@ -1,3 +1,108 @@
 *:before, *:after {
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgb(26, 26, 27)
+}
+
+p{
+    color: whitesmoke;
+
+}
+.average{
+    color: rgb(148, 243, 228);
+}
+.count{
+    color: rgb(55, 170, 156);
+}
+
+.hidden{
+    display: none;
+}
+
+.logo{
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    border: 5px solid red;
+}
+
+.search{
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    text-align: center;
+    border: 5px solid yellow;
+}
+
+.movies-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    border: 5px solid blue;
+}
+
+.movie-card{
+    padding: 2px;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: scroll; /* Add vertical scrollbar */
+    background-color: rgb(51, 63, 68);
+    border: 5px solid purple;
+    transition: width 0.1s;
+}
+
+.movie-card:hover{
+    width: 81%;
+}
+
+.movie-poster{
+    margin: auto;
+    padding: 10px;
+    width: 90%;
+    opacity: 1;
+    transition: opacity 0.1s;
+}
+
+.movie-poster:hover {
+    opacity: 0.6;
+
+}
+
+.movie.title{
+    padding: 3px;
+    overflow: auto;
+}
+
+.more{
+    margin: auto;
+    text-align: center;
+    border: 5px solid blueviolet;
+}
+
+
+  @media only screen and (min-width: 576px) {
+    .movies-grid{
+        grid-template-columns: 1fr;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .movies-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .movies-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .movies-grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
