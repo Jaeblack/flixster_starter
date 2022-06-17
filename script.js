@@ -27,7 +27,7 @@ function addMovieElement( movie){
 
         <img src="${movieImg}" alt="${movie.title}" class="movie-poster">
         <div class="movie-title">
-            <p> ${movie.title} </p>
+            <h2> ${movie.title} </h2>
         </div>
         <div class="movie-votes">
             <p class="average">${movie.vote_average}</p>
@@ -126,4 +126,7 @@ function addEventListeners(
 
 window.onload = function(){
     addEventListeners(moviesGrid, formMovie, searchInput, closeSearchBtn, btnMore);
+    btnsAfterCloseSearch();
+    page = 0;
+    fetchMovies();
 }

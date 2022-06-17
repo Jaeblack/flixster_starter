@@ -3,11 +3,11 @@
 }
 
 body{
-    background-color: rgb(26, 26, 27)
+    background-color: rgb(22, 22, 22)
 }
 
-p{
-    color: whitesmoke;
+h2{
+    color: rgb(235, 250, 248);
 
 }
 .average{
@@ -22,41 +22,44 @@ p{
 }
 
 .logo{
+    color: rgb(55, 170, 156);
     margin: auto;
     margin-top: 50px;
     text-align: center;
-    border: 5px solid red;
+
 }
 
 .search{
     margin: auto;
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
-    border: 5px solid yellow;
+}
+
+#search-input{
+    background: none;
+    color: white;
 }
 
 .movies-grid{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    border: 5px solid blue;
 }
 
 .movie-card{
     padding: 2px;
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
     text-align: center;
     overflow-x: hidden; /* Hide horizontal scrollbar */
     overflow-y: scroll; /* Add vertical scrollbar */
-    background-color: rgb(51, 63, 68);
-    border: 5px solid purple;
+    background-color: rgb(24, 30, 32);
     transition: width 0.1s;
 }
 
 .movie-card:hover{
-    width: 81%;
+    width: 92%;
 }
 
 .movie-poster{
@@ -80,7 +83,6 @@ p{
 .more{
     margin: auto;
     text-align: center;
-    border: 5px solid blueviolet;
 }
 
 
