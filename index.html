@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="logo"> FLIXTER</header>
+    <div class="search">
+        <form id="frm-movie">
+            <input id="search-input" type="text" placeholder="Movie name">
+            <button id="btn-search-submit" type="submit">Search</button>
+        </form>
+        <div id="close-search-btn"></div>
+    </div>
+    <div id="movies-grid" class="movies-grid">
+        <div class="movie-card">
+            <div class="movie-title"></div>
+            <img src="" alt="" class="movie-poster">
+            <div class="movie-votes">
+                <p class="average"></p>
+                <p class="count"></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="more">
+
+        <button id="load-more-movies-btn">load more</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-left">
+            <div class="modal-title">
+
+            </div>
+            <div class="modal-rate">
+
+            </div>
+            <div class="info">
+
+            </div>
+        </div>
+        <div class="modal-right">
+            <img src="" alt="actual-movie" srcset="">
+        </div>
+
+    </div>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
