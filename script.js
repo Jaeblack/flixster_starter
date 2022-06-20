@@ -30,8 +30,7 @@ function addMovieElement( movie){
             <h2> ${movie.title} </h2>
         </div>
         <div class="movie-votes">
-            <p class="average">${movie.vote_average}</p>
-            <p class="count">${movie.vote_count}</p>
+            <p class="average">rating : ${movie.vote_average}</p>
 
         </div>
     </div>
